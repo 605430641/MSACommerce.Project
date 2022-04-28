@@ -18,7 +18,11 @@ namespace AgileFramework.WebCore.MiddlewareExtend
         {
             _next = next;
         }
-
+        /// <summary>
+        /// 解决浏览器 Axios跨域请求是 浏览器会先发起Options与请求处理
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
             if (context.Request.Method.ToUpper() == "OPTIONS")
