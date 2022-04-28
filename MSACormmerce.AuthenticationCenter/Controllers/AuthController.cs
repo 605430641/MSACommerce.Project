@@ -21,6 +21,12 @@ namespace MSACormmerce.AuthenticationCenter.Controllers
             _HttpHelperService = httpHelperService;
         }
 
+        /// <summary>
+        /// 根据账号密码生成token
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [Route("api/accredit")]
         [HttpPost]
         public JsonResult Accredit([FromForm] string username, [FromForm] string password)

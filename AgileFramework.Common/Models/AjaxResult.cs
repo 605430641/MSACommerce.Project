@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace AgileFramework.Common.Models
 {
     /// <summary>
-    /// 通用数据返回类型
+    /// 全局通用数据返回类型
     /// </summary>
     public class AjaxResult
     {
@@ -34,6 +34,10 @@ namespace AgileFramework.Common.Models
         public bool Result { get; set; }
     }
 
+    /// <summary>
+    /// 全局通用数据返回 泛类型
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AjaxResult<T> : AjaxResult
     {
         /// <summary>

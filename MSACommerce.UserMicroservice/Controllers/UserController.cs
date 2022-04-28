@@ -42,7 +42,7 @@ namespace MSACommerce.UserMicroservice.Controllers
 
         [Route("/api/user/verify")]
         [HttpGet]
-        [AllowAnonymousAttribute]//自己校验
+        [AllowAnonymous]//自己校验
         public JsonResult CurrentUser()
         {
             AjaxResult ajaxResult = null;

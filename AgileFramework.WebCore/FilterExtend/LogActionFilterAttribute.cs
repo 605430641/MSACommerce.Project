@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AgileFramework.WebCore.FilterExtend
 {
+    /// <summary>
+    /// 日志记录Filter
+    /// </summary>
     public class LogActionFilterAttribute : ActionFilterAttribute
     {
         private ILogger<LogActionFilterAttribute> _logger = null;

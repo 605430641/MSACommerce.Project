@@ -32,6 +32,7 @@ namespace MSACommerce.UserMicroservice
             #region Filter
             services.AddControllers(o =>
             {
+                
                 o.Filters.Add(typeof(CustomExceptionFilterAttribute));
                 o.Filters.Add(typeof(LogActionFilterAttribute));
             });

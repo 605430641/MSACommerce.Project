@@ -515,7 +515,7 @@ const stringify = function (object, options) {
 
     return values.join("&");
 }
-
+//前端发送的请求都是基于这个转到网关地址
 axios.defaults.baseURL = "http://localhost:6299/api";
 axios.defaults.timeout = 5000000;
 axios.defaults.withCredentials = false;

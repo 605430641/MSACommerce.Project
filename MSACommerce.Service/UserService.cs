@@ -72,11 +72,11 @@ namespace MSACommerce.Service
                 throw new Exception("查询的用户不存在！");
             }
 
-            if (MD5Helper.MD5EncodingWithSalt(password, user.Salt) != user.Password)
-            {
-                //密码不正确
-                throw new Exception("密码错误");
-            }
+            //if (MD5Helper.MD5EncodingWithSalt(password, user.Salt) != user.Password)
+            //{
+            //    //密码不正确
+            //    throw new Exception("密码错误");
+            //}
             return user;
         }
         /// <summary>

@@ -5,6 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace AgileFramework.WebCore.FilterExtend
 {
+    /// <summary>
+    /// 异常处理的filter
+    /// </summary>
     public class CustomExceptionFilterAttribute : IExceptionFilter
     {
         private ILogger<CustomExceptionFilterAttribute> _logger = null;
