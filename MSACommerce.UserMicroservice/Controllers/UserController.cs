@@ -40,9 +40,12 @@ namespace MSACommerce.UserMicroservice.Controllers
         }
 
 
+        /// <summary>
+        /// 获取token里面的账号信息
+        /// </summary>
+        /// <returns></returns>
         [Route("/api/user/verify")]
         [HttpGet]
-        [AllowAnonymous]//自己校验
         public JsonResult CurrentUser()
         {
             AjaxResult ajaxResult = null;

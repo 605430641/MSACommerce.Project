@@ -20,7 +20,7 @@
     },
     {
       "UpstreamPathTemplate": "/api/user/{url}", //网关地址--url变量
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "PATCH", "Delete", "Options" ],
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "PATCH", "Delete", "Options" ], //Options的增加解决浏览器请求预状态问题
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

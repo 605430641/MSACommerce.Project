@@ -75,6 +75,8 @@ namespace MSACommerce.UserMicroservice
                 };
             });
             #endregion
+
+            //¿çÓò
             //services.AddCors(options =>
             //{
             //    options.AddPolicy("default", policy =>
@@ -99,12 +101,15 @@ namespace MSACommerce.UserMicroservice
             }
             app.UsePreOptionsRequest();
 
+          
             app.UseAuthentication();
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //¿çÓò
             //app.UseCors("default");
 
             app.UseEndpoints(endpoints =>
