@@ -22,7 +22,7 @@ namespace MSACormmerce.OcelotGateway
         {
             #region Swagger
             services.AddSwaggerGen(c =>
-            {
+            {//注意:应该放到 AddOcelot 
                 c.SwaggerDoc("v1",
                     new OpenApiInfo { Title = "Gateway API", Version = "v1", Description = "# gateway api..." });
             });
@@ -45,7 +45,7 @@ namespace MSACormmerce.OcelotGateway
             #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
-            {
+            {////此处配置swagger访问其他api服务的swagger
                 c.SwaggerEndpoint("/auth/swagger/v1/swagger.json", "鉴权 API V1");
                 c.SwaggerEndpoint("/user/swagger/v1/swagger.json", "用户 API V1");
             });

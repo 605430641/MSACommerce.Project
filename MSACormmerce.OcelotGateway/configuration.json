@@ -21,7 +21,7 @@
 
     {
       "UpstreamPathTemplate": "/api/user/{url}", //网关地址--url变量
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "PATCH", "Delete", "Options" ], //Options的增加解决浏览器请求预状态问题
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "PATCH", "Delete", "Options" ], //PATCH的增加解决浏览器请求预状态问题
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -36,7 +36,7 @@
         "Access-Control-Allow-Headers": "*"
       }
     },
-
+    //此处配置swagger访问其他api服务的swagger
     {
       "UpstreamPathTemplate": "/auth/swagger/v1/swagger.json",
       "UpstreamHttpMethod": [ "Get" ],
