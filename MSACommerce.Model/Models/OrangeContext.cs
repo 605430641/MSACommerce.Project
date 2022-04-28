@@ -1,14 +1,12 @@
-﻿using System;
+﻿using AgileFramework.Common.IOCOptions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Options;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using AgileFramework.Common.IOCOptions;
+using System;
 
 namespace MSACommerce.Model
 {
-	public partial class OrangeContext : DbContext
+    public partial class OrangeContext : DbContext
 	{
 		private readonly IOptionsMonitor<MySqlConnOptions>  _optionsMonitor;
 

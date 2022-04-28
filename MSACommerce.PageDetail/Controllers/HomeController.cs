@@ -9,6 +9,9 @@ using MSACommerce.PageDetail.Models;
 
 namespace MSACommerce.PageDetail.Controllers
 {
+   /// <summary>
+   /// 常规动态页-及时查找的
+   /// </summary>
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

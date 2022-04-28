@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MSACommerce.Model;
-using MSACommerce.Model;
+﻿using MSACommerce.Model;
 using MSACommerce.Model.DTO;
+using System.Collections.Generic;
 
 namespace MSACommerce.Interface
 {
-	public interface IGoodsService
+    public interface IGoodsService
 	{
 		PageResult<TbSpu> QuerySpuByPage(int page, int rows, string key, bool? saleable);
 

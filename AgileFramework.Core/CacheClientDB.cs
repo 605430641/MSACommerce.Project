@@ -67,8 +67,8 @@ namespace MSACommerce.Core
 			{
 				action();
 			}
-			catch (Exception e)
-			{
+			catch (Exception)
+            {
 
 
 			}
