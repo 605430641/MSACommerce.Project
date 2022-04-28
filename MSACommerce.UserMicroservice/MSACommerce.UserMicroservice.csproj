@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AgileFramework.Common\AgileFramework.Common.csproj" />
+    <ProjectReference Include="..\AgileFramework.Core\AgileFramework.Core.csproj" />
+    <ProjectReference Include="..\AgileFramework.WebCore\AgileFramework.WebCore.csproj" />
+    <ProjectReference Include="..\MSACommerce.Interface\MSACommerce.Interface.csproj" />
+    <ProjectReference Include="..\MSACommerce.Model\MSACommerce.Model.csproj" />
+    <ProjectReference Include="..\MSACommerce.Service\MSACommerce.Service.csproj" />
+  </ItemGroup>
+
+</Project>

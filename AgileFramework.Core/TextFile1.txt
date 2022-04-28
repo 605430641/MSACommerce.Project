@@ -1,0 +1,5 @@
+﻿docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e ES_JAVA_OPTS="-Xms100m -Xmx200m"   elasticsearch:7.2.0
+
+
+docker run -p 5601:5601 -d -e ELASTICSEARCH_URL=http://192.168.3.204:9200   -e ELASTICSEARCH_HOSTS=http://192.168.3.204:9200 kibana:7.2.0  
+     
