@@ -2,12 +2,12 @@
 using Microsoft.Extensions.Options;
 using ServiceStack;
 using ServiceStack.Redis;
-using ServiceStack.Text;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MSACommerce.Core
@@ -1037,7 +1037,8 @@ namespace MSACommerce.Core
 
 		public T GetValueFromHash<T>(string hashId, string key)
 		{
-			return this.TryCatch<T>(() => JsonSerializer.DeserializeFromString<T>(this.client.GetValueFromHash(hashId, key)), hashId);
+			return default(T);
+			//return this.TryCatch<T>(() => JsonSerializer.DeserializeFromString<T>(this.client.GetValueFromHash(hashId, key)), hashId);
 		}
 
 		public bool SetEntryInHashIfNotExists<T>(string hashId, string key, T value)

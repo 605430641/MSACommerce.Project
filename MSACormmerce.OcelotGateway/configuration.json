@@ -41,7 +41,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7200 //网关api 端口
+          "Port": 5001 //网关api 端口
         }
       ],
       "DownstreamPathTemplate": "/swagger/v1/swagger.json",
