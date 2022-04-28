@@ -12,12 +12,13 @@
       ],
       "DownstreamPathTemplate": "/api/{url}", //服务地址--url变量
       "DownstreamScheme": "http",
-      "DownstreamHeaderTransform": {
-        "Access-Control-Allow-Origin": "http://localhost:8070", //不存在就添加
+      "DownstreamHeaderTransform": { //网关增加 DownstreamHeaderTransform 直接解决跨域问题
+        "Access-Control-Allow-Origin": "http://localhost:8070", //有跨域问题就增加这个路由  
         "Access-Control-Allow-Methods": "*",
         "Access-Control-Allow-Headers": "*"
       }
     },
+
     {
       "UpstreamPathTemplate": "/api/user/{url}", //网关地址--url变量
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "PATCH", "Delete", "Options" ], //Options的增加解决浏览器请求预状态问题
@@ -35,6 +36,7 @@
         "Access-Control-Allow-Headers": "*"
       }
     },
+
     {
       "UpstreamPathTemplate": "/auth/swagger/v1/swagger.json",
       "UpstreamHttpMethod": [ "Get" ],
@@ -47,6 +49,7 @@
       "DownstreamPathTemplate": "/swagger/v1/swagger.json",
       "DownstreamScheme": "http"
     },
+
     {
       "UpstreamPathTemplate": "/user/swagger/v1/swagger.json",
       "UpstreamHttpMethod": [ "Get" ],
