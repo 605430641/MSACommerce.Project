@@ -520,6 +520,7 @@ axios.defaults.baseURL = "http://localhost:6299/api";
 axios.defaults.timeout = 5000000;
 axios.defaults.withCredentials = false;
 
+//前端AOP-和后端Filter一样,全局增加Ttoken
 //Filter---AOP---拦截器
 axios.interceptors.request.use((config) => {
     if (localStorage["token"] != null) {

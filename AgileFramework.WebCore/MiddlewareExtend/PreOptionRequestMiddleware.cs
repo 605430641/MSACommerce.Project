@@ -39,6 +39,11 @@ namespace AgileFramework.WebCore.MiddlewareExtend
     /// </summary>
     public static class PreOptionsRequestMiddlewareExtensions
     {
+        /// <summary>
+        /// 处理Option预请求的中间件
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         public static IApplicationBuilder UsePreOptionsRequest(this IApplicationBuilder app)
         {
             return app.UseMiddleware<PreOptionRequestMiddleware>();
