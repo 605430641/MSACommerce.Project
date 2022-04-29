@@ -104,6 +104,7 @@ namespace MSACommerce.Service
             user.Password = md5Pwd;
             _orangeContext.Add(user);
             int count = _orangeContext.SaveChanges();
+            Console.WriteLine("开始2");
             if (count != 1)
             {
                 throw new Exception("用户注册失败");

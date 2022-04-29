@@ -18,6 +18,7 @@ dotnet run --urls="http://*:7200" --ip="127.0.0.1" --port=7200
 启动用户服务
 dotnet run --urls="http://*:5726" --ip="127.0.0.1" --port=5726
 
+解决浏览器 Axios跨域请求是 浏览器会先发起Options与请求处理
 
 
 

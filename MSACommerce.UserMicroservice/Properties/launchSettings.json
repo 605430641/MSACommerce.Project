@@ -17,12 +17,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Zhaoxi.MSACommerce.UserMicroservice": {
+    "MSACommerce.UserMicroservice": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5726",
+      "applicationUrl": "http://localhost:5726",//设置此处为命令行启动可以断点调试
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

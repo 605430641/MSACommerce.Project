@@ -17,32 +17,39 @@ namespace MSACommerce.Core
         #region TestRedisCrack
         static CacheClientDB()
         {
-            try
-            {
-                Parallel.For(0, 10000, (i) =>
-                {
-                    using (RedisClient client = new RedisClient("192.168.3.254"))
-                    {
-                        client.Set("name" + i, i);
-                        client.Incr("name" + i);
-                        Console.WriteLine(i);
-                    }
+			//此段代码验证redis6000的错误
 
-                });
-                Console.WriteLine("ok");
-                Console.WriteLine("Hello World!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+			//try 
+   //         {
+   //             Parallel.For(0, 1, (i) =>
+   //             {
+   //                 using (RedisClient client = new RedisClient("127.0.0.1"))
+   //                 {
+   //                     client.Set("name" + i, i);
+   //                     client.Incr("name" + i);
+   //                     Console.WriteLine(i);
+   //                 }
+
+   //             });
+
+			//	RedisClient client = new RedisClient("127.0.0.1");
+
+			//	var aa = client.Get("name0");
+			//	Console.WriteLine("ok");
+   //             Console.WriteLine("Hello World!");
+   //         }
+   //         catch (Exception ex)
+   //         {
+   //             Console.WriteLine(ex.Message);
+   //         }
         }
-        #endregion
-
-        private readonly RedisConnOptions _RedisOptions;
+		#endregion
+		private IRedisClient client;
+		private readonly RedisConnOptions _RedisOptions;
 		public CacheClientDB(IOptionsMonitor<RedisConnOptions> jwtTokenOptions)
 		{
 			this._RedisOptions = jwtTokenOptions.CurrentValue;
+		
 			client = new RedisClient(_RedisOptions.Host, _RedisOptions.Prot, null, _RedisOptions.DB);
 		}
 		// 管道模式 三种模式
@@ -50,7 +57,7 @@ namespace MSACommerce.Core
 		{
 			return client;
 		}
-		private IRedisClient client;
+	
 		 
 		public void Dispose()
 		{
@@ -88,7 +95,6 @@ namespace MSACommerce.Core
 			{
 				isError = true;
 				throw exinfo;
-				ex = exinfo;
 			}
 			finally
 			{
