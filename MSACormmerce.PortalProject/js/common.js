@@ -536,6 +536,7 @@ axios.interceptors.response.use(response => {
     return response;
 });
 
+//前端可以解析Jwt 但是token过期 有效性不好检查 一般还是后端去处理
 function jwtGetName() {
     var token = localStorage["token"];
     let userString = decodeURIComponent(escape(window.atob(token.split('.')[1])))
