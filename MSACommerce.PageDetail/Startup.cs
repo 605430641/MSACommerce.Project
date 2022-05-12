@@ -1,8 +1,13 @@
+using AgileFramework.Common.IOCOptions;
+using AgileFramework.WebCore.FilterExtend;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MSACommerce.Interface;
+using MSACommerce.Model;
+using MSACommerce.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +27,25 @@ namespace MSACommerce.PageDetail
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews(o =>
+            {
+                o.Filters.Add(typeof(CustomExceptionFilterAttribute));
+                o.Filters.Add(typeof(LogActionFilterAttribute));
+            });
+
+
+            #region 服务注入
+            services.AddTransient<OrangeContext, OrangeContext>();
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IGoodsService, GoodsService>();
+            services.AddTransient<ISpecService, SpecService>();
+            services.AddTransient<IPageDetailService, PageDetailService>();
+            #endregion
+
+            #region 配置文件注入
+            services.Configure<MySqlConnOptions>(this.Configuration.GetSection("MysqlConn"));
+            #endregion
             services.AddControllersWithViews();
         }
 

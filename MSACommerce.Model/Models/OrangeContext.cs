@@ -8,12 +8,15 @@ namespace MSACommerce.Model
 {
     public partial class OrangeContext : DbContext
 	{
-		private readonly IOptionsMonitor<MySqlConnOptions>  _optionsMonitor;
+		private readonly IOptionsMonitor<MySqlConnOptions> _optionsMonitor;
+		private readonly string _connStr;
 
 		public OrangeContext(IOptionsMonitor<MySqlConnOptions> optionsMonitor)
 		{
 			_optionsMonitor = optionsMonitor;
+			_connStr = _optionsMonitor.CurrentValue.Url;
 		}
+
 
 		//public OrangeContext(DbContextOptions<OrangeContext> options)
 		//	: base(options)
@@ -43,18 +46,18 @@ namespace MSACommerce.Model
 		{
 			if (!optionsBuilder.IsConfigured)
 			{
-				optionsBuilder.UseMySql(_optionsMonitor.CurrentValue.Url
-						// Replace with your connection string.
-						,
-						//"server=192.168.3.254;port=3306;database=orange;user id=root;password=123",
-						// Replace with your server version and type.
-						// For common usages, see pull request #1233.
-						new MySqlServerVersion(new Version(5, 7, 32)), // use MariaDbServerVersion for MariaDB
-						mySqlOptions => mySqlOptions
-							.CharSetBehavior(CharSetBehavior.NeverAppend))
-					// Everything from this point on is optional but helps with debugging.
-					.EnableSensitiveDataLogging()
-					.EnableDetailedErrors();
+				optionsBuilder.UseMySql(_connStr
+					// Replace with your connection string.
+					,
+					//"server=192.168.3.254;port=3306;database=orange;user id=root;password=123",
+					// Replace with your server version and type.
+					// For common usages, see pull request #1233.
+					new MySqlServerVersion(new Version(5, 7, 32)), // use MariaDbServerVersion for MariaDB
+					mySqlOptions => mySqlOptions
+						.CharSetBehavior(CharSetBehavior.NeverAppend))
+				// Everything from this point on is optional but helps with debugging.
+				.EnableSensitiveDataLogging()
+				.EnableDetailedErrors();
 			}
 		}
 

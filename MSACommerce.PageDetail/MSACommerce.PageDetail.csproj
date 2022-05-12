@@ -9,4 +9,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AgileFramework.WebCore\AgileFramework.WebCore.csproj" />
+    <ProjectReference Include="..\MSACommerce.Interface\MSACommerce.Interface.csproj" />
+    <ProjectReference Include="..\MSACommerce.Service\MSACommerce.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MSACommerce.Model">
+      <HintPath>..\MSACommerce.Model\bin\Debug\net5.0\MSACommerce.Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
